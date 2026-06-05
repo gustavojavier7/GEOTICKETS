@@ -1,0 +1,70 @@
+name: Registrar ticket rápido
+description: Crea un ticket operativo de forma estructurada (CCTV / Control de Acceso / Sistemas)
+title: "[TICKET] "
+labels: ["estado:nuevo"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📋 Registro Rápido de Ticket
+        Completa los campos para que el equipo pueda atenderlo lo antes posible.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área / Sistema afectado
+      description: Seleccioná el área principal
+      options:
+        - CCTV - Cámaras
+        - Control de Acceso
+        - NVR / Grabación
+        - Red / Comunicaciones
+        - Servidor / Almacenamiento
+        - Software / Digifort
+        - Hardware / Equipos
+        - Otro
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: ubicacion
+    attributes:
+      label: Ubicación / Dispositivo específico
+      description: Ejemplo: Cámara 12 - Portón Norte, NVR 01, Switch Datacenter, etc.
+      placeholder: "Cámara 23 - Acceso Principal"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del problema o requerimiento
+      description: Sé lo más claro posible
+      placeholder: "La cámara 23 no responde, se ve imagen congelada desde las 14:30 hs."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - prioridad:urgente
+        - prioridad:alta
+        - prioridad:media
+        - prioridad:baja
+      default: 2
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verificaciones
+    attributes:
+      label: Verificaciones iniciales realizadas
+      options:
+        - label: Revisé el estado del dispositivo en Digifort / C•CURE
+        - label: Reinicié el equipo / cámara
+        - label: Verifiqué conectividad de red
+        - label: Adjunté capturas de pantalla o fotos (si corresponde)

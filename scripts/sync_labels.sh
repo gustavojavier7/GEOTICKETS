@@ -17,39 +17,42 @@ create_or_update_label () {
   fi
 }
 
-# Tipo
+# ==================== TIPO ====================
 create_or_update_label "tipo:registrar-ticket" "0E8A16" "Alta rápida de ticket operativo"
 
-# Prioridad
+# ==================== PRIORIDAD ====================
 create_or_update_label "prioridad:baja" "0E8A16" "Impacto menor"
 create_or_update_label "prioridad:media" "FBCA04" "Impacto moderado"
 create_or_update_label "prioridad:alta" "D93F0B" "Impacto alto"
 create_or_update_label "prioridad:urgente" "B60205" "Impacto crítico"
 
-# Estado
+# ==================== ESTADO ====================
 create_or_update_label "estado:abierto" "1D76DB" "Ticket abierto"
 create_or_update_label "estado:en-curso" "0052CC" "Trabajo en progreso"
 create_or_update_label "estado:esperando-respuesta" "5319E7" "Esperando tercero/cliente"
 create_or_update_label "estado:cerrado" "6A737D" "Ticket cerrado"
 
-# Sistema
-create_or_update_label "sistema:digifort" "0366D6" "Sistema DIGIFORT"
-create_or_update_label "sistema:hikvision" "0366D6" "Sistema HIKVISION"
-create_or_update_label "sistema:ccure" "0366D6" "Sistema CCURE"
-create_or_update_label "sistema:windows" "0366D6" "Sistema WINDOWS"
-create_or_update_label "sistema:redes" "0366D6" "Sistema REDES"
+# ==================== SISTEMA AFECTADO (Nueva lista) ====================
+create_or_update_label "sistema:ccure" "0366D6" "Sistema C•CURE"
+create_or_update_label "sistema:hikvision-230" "0366D6" "HIKVISION Planta 230"
+create_or_update_label "sistema:hikvision-185" "0366D6" "HIKVISION Planta 185"
+create_or_update_label "sistema:hikvision-70" "0366D6" "HIKVISION Planta 70"
+create_or_update_label "sistema:hikvision-14" "0366D6" "HIKVISION Planta 14"
+create_or_update_label "sistema:hikvision-11" "0366D6" "HIKVISION Planta 11"
+create_or_update_label "sistema:redes" "0366D6" "Redes y Comunicaciones"
+create_or_update_label "sistema:pc-windows" "0366D6" "PCs y Sistemas Windows"
 
-# Solicitante
+# ==================== SOLICITANTE ====================
 create_or_update_label "solicitante:evelin-sosa" "C5DEF5" "Solicitante Evelin Sosa"
 create_or_update_label "solicitante:jennifer-castilla" "C5DEF5" "Solicitante Jennifer Castilla"
 create_or_update_label "solicitante:jesus-martin" "C5DEF5" "Solicitante Jesús Martín"
 create_or_update_label "solicitante:gustavo-lopez" "C5DEF5" "Solicitante Gustavo López"
 
-# Escalamiento
+# ==================== ESCALAMIENTO ====================
 create_or_update_label "escalamiento:respuesta-proveedor-recibida" "F9D0C4" "Proveedor respondió"
 create_or_update_label "escalamiento:requiere-reemplazos" "F9D0C4" "Requiere reemplazo de partes"
 create_or_update_label "escalamiento:visita-en-sitio" "F9D0C4" "Requiere visita técnica"
 create_or_update_label "escalamiento:capex" "F9D0C4" "Requiere presupuesto CAPEX"
 create_or_update_label "escalamiento:bloqueado-tercero" "F9D0C4" "Bloqueado por tercero"
 
-echo "✅ Labels sincronizados en $REPO"
+echo "✅ Labels sincronizados en $REPO (versión actualizada para GEOTICKETS)"

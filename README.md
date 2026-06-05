@@ -10,14 +10,14 @@ Repositorio para la gestión de tickets de infraestructura de videovigilancia, c
 
 ## Labels
 
-| Prefijo       | Labels                                      | Descripción                          |
-|---------------|---------------------------------------------|--------------------------------------|
-| tipo:         | registrar-ticket                            | Tipo de issue                        |
-| prioridad:    | baja, media, alta, urgente                  | Impacto del incidente                |
-| estado:       | abierto, en-curso, esperando-respuesta, cerrado | Ciclo de vida del ticket         |
-| sistema:      | digifort, hikvision, ccure, windows, redes  | Sistema afectado                     |
-| solicitante:  | evelin-sosa, jennifer-castilla, jesus-martin, gustavo-lopez | Quién reporta          |
-| escalamiento: | respuesta-proveedor-recibida, requiere-reemplazos, visita-en-sitio, capex, bloqueado-tercero | Acciones requeridas |
+| Prefijo          | Labels principales                                      | Descripción |
+|------------------|---------------------------------------------------------|-----------|
+| tipo:            | registrar-ticket                                        | Tipo de issue |
+| prioridad:       | baja, media, alta, urgente                              | Impacto del incidente |
+| estado:          | abierto, en-curso, esperando-respuesta, cerrado        | Ciclo de vida del ticket |
+| **sistema:**     | **ccure**, **hikvision-230**, **hikvision-185**, **hikvision-70**, **hikvision-14**, **hikvision-11**, **redes**, **pc-windows** | **Sistema / Planta afectada** |
+| solicitante:     | evelin-sosa, jennifer-castilla, jesus-martin, gustavo-lopez | Quién reporta |
+| escalamiento:    | respuesta-proveedor-recibida, requiere-reemplazos, visita-en-sitio, capex, bloqueado-tercero | Acciones requeridas |
 
 ## Automatización
 

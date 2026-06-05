@@ -1,0 +1,49 @@
+name: Assign GEO Ticket ID
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  assign_geo_id:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build GEO ID
+        id: geo
+        run: |
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          printf -v PADDED "%04d" "$ISSUE_NUMBER"
+          echo "geo_id=GEO-${PADDED}" >> "$GITHUB_OUTPUT"
+
+      - name: Prefix issue title with GEO ID
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const geoId = '${{ steps.geo.outputs.geo_id }}';
+            const currentTitle = issue.title || '';
+            const normalizedPrefix = `[${geoId}]`;
+
+            if (!currentTitle.startsWith(normalizedPrefix)) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                title: `${normalizedPrefix} ${currentTitle}`.trim()
+              });
+            }
+
+      - name: Add GEO ID comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const geoId = '${{ steps.geo.outputs.geo_id }}';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body: `✅ ID externo asignado automáticamente: **${geoId}**`
+            });
